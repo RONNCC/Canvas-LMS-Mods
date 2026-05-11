@@ -91,7 +91,14 @@
       "js": [
         "canvas-mods/courses/assignments/feature-export-grades/assignment-export-grades.js",
         "canvas-mods/courses/assignments/feature-rubric-use-for-grading-notification/rubric-use-for-grading-notification.js",
-        "canvas-mods/courses/assignments/feature-load-assignment-details/load-assignment-details.js"
+        "canvas-mods/courses/assignments/feature-load-assignment-details/load-assignment-details.js",
+        "canvas-mods/courses/assignments/feature-export-quiz-question-scores/export-quiz-question-scores.js"
+      ]
+    },
+    {
+      "matches": ["*://*/courses/*/quizzes/*"],
+      "js": [
+        "canvas-mods/courses/assignments/feature-export-quiz-question-scores/export-quiz-question-scores.js"
       ]
     },
     {

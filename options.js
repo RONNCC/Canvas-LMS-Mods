@@ -118,6 +118,9 @@ function saveOptions() {
   const isAssignmentGradesExportButtonEnabled = document.getElementById(
     "course-assignments-assignment-export-grades"
   ).checked;
+  const isQuizQuestionScoresExportEnabled = document.getElementById(
+    "course-assignments-assignment-export-quiz-question-scores"
+  ).checked;
   const isRubricUsedForGradingIndicatorEnabled = document.getElementById(
     "course-assignments-assignment-rubric-grading-indicator"
   ).checked;
@@ -319,6 +322,7 @@ function saveOptions() {
         isAssignmentsLoadDetailsEnabledWithTurnitin,
       courseAssignmentsExpandCollapse: isAssignmentsExpandCollapseEnabled,
       courseAssignmentExportGrades: isAssignmentGradesExportButtonEnabled,
+      courseAssignmentExportQuizQuestionScores: isQuizQuestionScoresExportEnabled,
       courseAssignmentRubricUsedForGradingCheck:
         isRubricUsedForGradingIndicatorEnabled,
       courseDiscussionExportGrades: isDiscussionGradeExportEnabled,
@@ -412,6 +416,7 @@ function restoreOptions() {
       courseAssignmentsLoadDetailsTurnitin: true,
       courseAssignmentsExpandCollapse: true,
       courseAssignmentExportGrades: true,
+      courseAssignmentExportQuizQuestionScores: true,
       courseAssignmentRubricUsedForGradingCheck: true,
       courseDiscussionExportGrades: true,
       courseSectionsSectionReport: true,
@@ -551,6 +556,9 @@ function restoreOptions() {
       document.getElementById(
         "course-assignments-assignment-export-grades"
       ).checked = items.courseAssignmentExportGrades;
+      document.getElementById(
+        "course-assignments-assignment-export-quiz-question-scores"
+      ).checked = items.courseAssignmentExportQuizQuestionScores;
       document.getElementById(
         "course-assignments-assignment-rubric-grading-indicator"
       ).checked = items.courseAssignmentRubricUsedForGradingCheck;
