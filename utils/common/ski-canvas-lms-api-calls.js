@@ -41,12 +41,20 @@ class SkiCanvasLmsApiCaller {
 
     let requestResponse;
     return await fetch(requestUrl)
-      .then((response) => {
+      .then(async (response) => {
         requestResponse = response;
         const contentType = response.headers.get("content-type") || "";
         if (!contentType.includes("application/json")) {
+          let preview = "";
+          try {
+            const text = await response.text();
+            preview = text.substring(0, 500);
+          } catch (_) {}
           throw new Error(
-            `Expected JSON but got "${contentType || "unknown"}" (status: ${response.status}) from ${requestUrl}`
+            `Non-JSON response from ${requestUrl}\n` +
+            `  Status: ${response.status} ${response.statusText}\n` +
+            `  Content-Type: ${contentType || "(none)"}\n` +
+            `  Body preview: ${preview || "(empty)"}`
           );
         }
         return response.json();
