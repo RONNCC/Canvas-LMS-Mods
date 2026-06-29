@@ -1,5 +1,7 @@
 # Canvas LMS Mods
 
+> **Fork note:** This repository is a fork of [Code-with-Ski/Canvas-LMS-Mods](https://github.com/Code-with-Ski/Canvas-LMS-Mods). The README below is from the original.
+
 The purpose of this repository is to provide a browser extension to use with Canvas LMS from Instructure. For an overview of the different features you can learn more at the [Canvas LMS Mods](https://code-with-ski.github.io/Canvas-LMS_Mods-Website/) website.
 
 This is currently being designed as a Chrome browser extension, but additional versions for other browsers may be developed in the future. The target audience for the initial version will be admin users as customizations will target the admin area of Canvas first.
