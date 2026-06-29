@@ -43,6 +43,12 @@ class SkiCanvasLmsApiCaller {
     return await fetch(requestUrl)
       .then((response) => {
         requestResponse = response;
+        const contentType = response.headers.get("content-type") || "";
+        if (!contentType.includes("application/json")) {
+          throw new Error(
+            `Expected JSON but got "${contentType || "unknown"}" (status: ${response.status}) from ${requestUrl}`
+          );
+        }
         return response.json();
       })
       .then((data) => {
@@ -248,6 +254,9 @@ class SkiCanvasLmsApiCaller {
     resultPropertySelector = null,
     attempt = 1
   ) {
+    if (!response) {
+      return SkiCanvasLmsApiResponse.FAILED_RETRY;
+    }
     if (response.isSuccessful) {
       const pageResults = response.results;
       SkiCanvasLmsApiCaller.#addCurrentPageResultsToTotalResults(
